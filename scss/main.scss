@@ -1,0 +1,96 @@
+@import 'global';
+
+header{
+    position:fixed;
+    top:0;
+    border-top: 50px solid rgb(96, 56, 181);
+    width:100%;
+}
+
+.wrapper{
+    background-color: rgb(160, 67, 242);
+    padding-top: 100px;
+    padding-bottom:100px;
+}
+
+
+
+// Ejemplo de Nesting
+
+nav{
+    @include caja-flex(space-between, center, nowrap);
+
+    ul{
+        display:flex;
+        padding:0;
+
+        a{
+            padding: 10px;
+            font-size: 1.6rem;
+            font-weight:bold;
+        }
+
+        a:hover{
+            color:#662485;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.presentacion{
+    width: 100%;
+    padding-top: 200px;
+    padding-bottom:100px;
+    background-color: #662485;    
+    @include caja-flex(space-between, center, nowrap);
+
+    .flex-item1{
+        position: relative;
+        left: 10px;
+        top: 50px;
+        
+    }
+    .flex-item2{
+        position: absolute;
+        float: left;
+    }
+
+    h1{
+        margin-top:0;
+        padding-right: 20px;
+        font-size: $font-h1;
+    }
+
+    p{
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+}
+
+.Contenidos{
+    div{
+        text-align: center;
+    }
+
+    .tipo-Contenidos{
+        @include caja-flex(center, center, nowrap);
+        i{
+            font-size: 30px;
+            color: #6495ED;
+        }
+    }
+}
+
+footer{
+    min-height: 80px;
+    background-color:rgb(96, 56, 181);
+    margin-top: 0;
+    .footer-content{
+        text-align:center;
+        padding-top:30px;
+        padding-bottom:30px;
+    }
+}
+
+@import 'medios';
